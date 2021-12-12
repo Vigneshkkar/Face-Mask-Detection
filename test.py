@@ -2,7 +2,7 @@ import requests
 import json
 
 serverToken = 'AAAAO5T7NUo:APA91bFj3mgtfeVJUp8OM7AqVOXhvPMTjbWJpncUnD2f3jXEkxDXh3F5eBqRvxTMFyUopxQOa-kcALIiNNrjdXN4RqZzuxTF0qXhgw2OnJcTqVWPtT_qVcV_1Cbj02rWHff0w3Y90O-5'
-deviceToken = 'dRkCb37HbZTCNZo16TANhI:APA91bF6B4mzI-BXLs0UHk_wXpaRh0oUIXcqnoUph99yZwkSIgNJwuq0DaoCK84N6T888eN6n92R9U5gFUbQ_NrYdhbnPQZoaCw3CgEqxt708H8qjeKltCy2KMRx2Vz6Gdi6aPjV-wTL'
+deviceToken = 'dMYdDuEwMFtJ58w_L42fv-:APA91bESoIFbnmG-6bkLN6a0VFqHCMhQ8YPndtAz1snjTpoGnTKjFkrPBr9K6pxck3uJDkZzkHjVXgOTZFITZ9alixSPelkIoiCfTeQkvoa4uXDnl88ssWvbko92Q-MvIzGZVSffaA9z'
 
 headers = {
         'Content-Type': 'application/json',
@@ -75,18 +75,18 @@ while True:
         cv2.rectangle(im,(x,y),(x+w,y+h),GR_dict[label],2)
         cv2.rectangle(im,(x,y-40),(x+w,y),GR_dict[label],-1)
         cv2.putText(im, results[label], (x, y-10),cv2.FONT_HERSHEY_SIMPLEX,0.8,(255,255,255),2)
-        print(label, type(label), check_alert)
+        
         if(label == 1):
             check_alert =  False
             alert_sent = False
         if(label == 0 and check_alert == False):
-            print("Inside true function")
             check_alert = True
             time_diff = time()
         if(int(time() - time_diff) > 5 and check_alert and alert_sent == False):
             send_alert()
             check_alert = False
             alert_sent = True
+            
     cv2.imshow('Face Mask Detection',   im)
     key = cv2.waitKey(10)
     
