@@ -13,8 +13,7 @@ body = {
           'notification': {'title': 'Alert Hight Risk',
                             'body': 'A Person Entered the Store without Mask.',
                             },
-          'to':
-              deviceToken,
+          "topic": "Alert",
           'priority': 'high',
         #   'data': dataPayLoad,
         }
