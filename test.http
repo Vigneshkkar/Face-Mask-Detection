@@ -1,0 +1,11 @@
+POST https://fcm.googleapis.com/fcm/send HTTP/1.1
+Content-Type: application/json
+Authorization: key=AAAAO5T7NUo:APA91bFj3mgtfeVJUp8OM7AqVOXhvPMTjbWJpncUnD2f3jXEkxDXh3F5eBqRvxTMFyUopxQOa-kcALIiNNrjdXN4RqZzuxTF0qXhgw2OnJcTqVWPtT_qVcV_1Cbj02rWHff0w3Y90O-5
+
+{
+          "notification": {"title": "Alert Hight Risk",
+                            "body": "A Person Entered the Store without Mask.",
+                            },
+          "to": "/topics/Alert",
+          "priority": "high"
+}

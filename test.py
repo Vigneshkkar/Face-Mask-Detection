@@ -13,7 +13,7 @@ body = {
           'notification': {'title': 'Alert Hight Risk',
                             'body': 'A Person Entered the Store without Mask.',
                             },
-          "topic": "Alert",
+          "to": "/topics/Alert",
           'priority': 'high',
         #   'data': dataPayLoad,
         }
@@ -41,7 +41,7 @@ results={0:'without mask',1:'mask'}
 GR_dict={0:(0,0,255),1:(0,255,0)}
 
 rect_size = 4
-cap = cv2.VideoCapture(0) 
+cap = cv2.VideoCapture(1) 
 
 
 haarcascade = cv2.CascadeClassifier('/Users/vigneshkkar/opt/anaconda3/lib/python3.8/site-packages/cv2/data/haarcascade_frontalface_alt.xml')
